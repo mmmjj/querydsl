@@ -12,6 +12,7 @@ jpa:
     hibernate:
       # show_sql: true sysout?
       format_sql: true #looger
+      use_sql_comments: true #jpql보기
 
 logging.level:
   org.hibernate.SQL: debug
