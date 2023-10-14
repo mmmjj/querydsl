@@ -130,8 +130,6 @@ public class MemberDataJpaRepositoryImpl implements MemberCustomRepository {
                         , ageGoe(condition.getAgeGoe())
                         , ageLoe(condition.getAgeLoe())
                 )
-                .offset(pageable.getOffset()) //몇번부터조회할건지
-                .limit(pageable.getPageSize())//몇개를 조회할건지
                 .fetchCount();
 
         return new PageImpl<>(content, pageable, total);
