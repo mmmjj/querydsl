@@ -36,10 +36,10 @@ class MemberJpaRepositoryTest {
         assertThat(findMember).isEqualTo(member);
 
         List<Member> result1 = memberJpaRepository.findAll();
-        assertThat(findMember).isEqualTo(member);
+        assertThat(result1).containsExactly(member);
 
         List<Member> result2 = memberJpaRepository.findByUsername("member1");
-        assertThat(findMember).isEqualTo(member);
+        assertThat(result2).containsExactly(member);
     }
 
     @BeforeEach
@@ -85,7 +85,7 @@ class MemberJpaRepositoryTest {
         }
 
         List<MemberTeamDto> result2 = memberJpaRepository.search(condition);
-        for(MemberTeamDto m : result) {
+        for(MemberTeamDto m : result2) {
             System.out.println("========================");
             System.out.println(m);
         }
